@@ -1,39 +1,57 @@
-.song-container {
+.song {
   min-height: 60vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  img {
-    width: 25%;
+  flex-direction: column;
+  &__cover {
+    width: 20%;
+    transition: 0.5s linear;
     border-radius: 50%;
-    transition: all 2s ease;
   }
-  h2 {
-    padding: 3rem 1rem 1rem 1rem;
-  }
-  h3 {
-    font-size: 1rem;
+  &__title {
+    font-size: 1.5rem;
+    padding: 2rem 1rem 1rem 1rem;
   }
 }
-
-@media screen and (max-width: 768px) {
-  .song-container {
-    img {
-      width: 60%;
-    }
-  }
-}
-
-@keyframes rotate {
+@-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 12s linear infinite;
+  -moz-animation: rotating 12s linear infinite;
+  -ms-animation: rotating 12s linear infinite;
+  -o-animation: rotating 12s linear infinite;
+  animation: rotating 12s linear infinite;
+}
 
-.rotateSong {
-  animation: rotate 20s linear forwards infinite;
+@media screen and (max-width: 768px) {
+  .song__cover {
+    width: 40%;
+  }
 }

@@ -2,31 +2,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #d6d6d6 transparent;
+}
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  cursor: pointer;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+  border-radius: 0.3em;
+  border: transparent;
 }
 
 body {
-  font-family: "Lato", sans-serif;
-}
-.App {
-  transition: all 0.5s ease;
-}
-.library-active {
-  margin-left: 30%;
+  font-family: Comfortaa;
 }
 
-h1 {
-  font-size: 1rem;
-}
-h2 {
-  color: rgb(51, 51, 51);
-}
+h2,
 h3,
 h4 {
   color: rgb(100, 100, 100);
+}
+h3,
+h4 {
   font-weight: 400;
 }
-
+.app {
+  transition: 0.5s ease;
+}
+.library-active {
+  margin-left: 4rem;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+@import "./nav";
 @import "./song";
 @import "./player";
 @import "./library";
-@import "./nav";
